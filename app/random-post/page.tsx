@@ -70,8 +70,7 @@ export default function RandomPost() {
         </div>:
         <div className="w-[100%] max-w-[450px] rounded-md flex flex-col items-center justify-center gap-3 p-3 bg-[--dominant] shadow-md">
           <div className="w-[100%] flex flex-row items-center justify-start gap-2">
-            <p className="text-nowrap text-[--vibrant] font-semibold">{randomPost?.id}</p>
-            <p className="text-black font-semibold text-xl text-[--vibrant-dark]">{randomPost?.title}</p>
+            <p className="text-black font-semibold text-xl text-[--vibrant-dark]"><span className="text-[--vibrant]">{randomPost?.id}</span> {randomPost?.title}</p>
           </div>
           <div className="w-[100%] text-start text-[--muted]">
             <p>{randomPost?.body}</p>
