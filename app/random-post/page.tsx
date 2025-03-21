@@ -10,13 +10,6 @@ export type Post = {
   body: string,
 }
 
-export type Post = {
-  id: number,
-  userId: number,
-  title: string,
-  body: string,
-}
-
 export default function RandomPost() {
   const [posts, setPosts] = useState<Post[] | null>([]);
   const [error, setError] = useState<string>("")
@@ -37,11 +30,6 @@ export default function RandomPost() {
 
   const endpoint = "https://jsonplaceholder.typicode.com/posts";
 
-  const generateRandomNumber = (range: number) => {
-    return Math.floor(Math.random() * (range + 1));
-  }
-
-  const getPosts = async() => {
   const generateRandomNumber = (range: number) => {
     return Math.floor(Math.random() * (range + 1));
   }
@@ -74,12 +62,7 @@ export default function RandomPost() {
       getPosts();
     }
   }, [posts])
-    if(posts) {
-      getRandomPost();
-    } else {
-      getPosts();
-    }
-  }, [posts])
+
 
   return (
     <div className="w-[100vw] max-w-[100%] h-[100vh] flex flex-col items-center justify-center p-2">
