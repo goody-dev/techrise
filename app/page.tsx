@@ -6,7 +6,7 @@ export default function Home() {
 
   return (
     <div className="w-[100vw] max-w-[100%] h-[100vh] flex flex-col items-center justify-center gap-2 p-1">
-      <p className="text-2xl font-bold">Techrise Mentorship Tasks</p>
+      <p className="text-2xl font-bold text-center">Techrise Mentorship Tasks</p>
       <div className="w-[100%] max-w-[350px] flex flex-col items-center justify-center gap-2">
         <button className="w-[100%] p-2 rounded-md bg-white text-black" onClick={()=> router.push('/faq')}>FAQ Component</button>
         <button className="w-[100%] p-2 rounded-md bg-white text-black" onClick={()=> router.push('/random-post')}>Random Post Card</button>

@@ -15,13 +15,6 @@ export default function RandomPost() {
 
   const [randomPost, setRandomPost] = useState<Post | null>(null);
 
-  // {
-  //   id: 1,
-  //   userId: 1,
-  //   title: "Zustand for data management",
-  //   body: "Zustand has been a go to library for managing data in medium sized react applications, it's light weight, fast, and easy to use. However, setting it up for NEXTjs can be a thorn a in the flesh."
-  // }
-
   const url = usePathname();
   const router = useRouter();
 
