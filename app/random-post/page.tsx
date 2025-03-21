@@ -58,7 +58,7 @@ export default function RandomPost() {
 
 
   return (
-    <div className="w-[100vw] max-w-[100%] h-[100vh] flex flex-col items-center justify-center p-2">
+    <div className="w-[100vw] max-w-[100%] h-[100vh] flex flex-col items-center justify-center p-2 bg-[--vibrant-light]">
       <header className="fixed w-[100vw] max-w-[100%] p-1 sm:p-2 md:p-3 top-0 left-0 flex flex-row items-center justify-start">
         {url.endsWith("faq") || url.endsWith("random-post")? <button onClick={() => router.back()} className="text-white text-2xl">{"<"}</button>: null}
       </header>
@@ -68,16 +68,16 @@ export default function RandomPost() {
           <p>Error fetching post</p>
           <button onClick={() => getPosts()} className="w-[100%] p-2 rounded-md bg-white text-black">Reload</button>
         </div>:
-        <div className="w-[100%] max-w-[450px] rounded-md flex flex-col items-center justify-center gap-3 p-3 bg-white text-black">
+        <div className="w-[100%] max-w-[450px] rounded-md flex flex-col items-center justify-center gap-3 p-3 bg-[--dominant] shadow-md">
           <div className="w-[100%] flex flex-row items-center justify-start gap-2">
-            <p className="text-nowrap">{randomPost?.id + " |"}</p>
-            <p className="text-black font-semibold text-xl">{randomPost?.title}</p>
+            <p className="text-nowrap text-[--vibrant] font-semibold">{randomPost?.id}</p>
+            <p className="text-black font-semibold text-xl text-[--vibrant-dark]">{randomPost?.title}</p>
           </div>
-          <div className="w-[100%] text-start">
+          <div className="w-[100%] text-start text-[--muted]">
             <p>{randomPost?.body}</p>
           </div>
           <div className="w-[100%] flex flex-row items-center justify-end">
-            <button onClick={() => getRandomPost()} className="w-[100px] p-2 rounded-md border-[1px] border-black">
+            <button onClick={() => getRandomPost()} className="w-[100px] p-1 rounded-md border-[1px] border-[--vibrant] text-[--vibrant]">
               New Post
             </button>
           </div>
