@@ -11,7 +11,7 @@ export type Post = {
 }
 
 export default function RandomPost() {
-  const [posts, setPosts] = useState<Post[] | null>([]);
+  const [posts, setPosts] = useState<Post[] | null>(null);
 
   const [randomPost, setRandomPost] = useState<Post | null>(null);
 
@@ -36,9 +36,10 @@ export default function RandomPost() {
   const getPosts = async() => {
     setIsLoading(true);
     try {
-      const response = await fetch(endpoint)
-      const data = await response.json()
-      setPosts(data)
+      const response = await fetch(endpoint);
+      const data = await response.json();
+      setPosts(data);
+      console.log(data);
     } catch(error) {
       console.log("Something went wrong!", error);
     } finally {
@@ -70,19 +71,16 @@ export default function RandomPost() {
       </header>
       {      
         isLoading? <p>Loading...</p>:
-        !isLoading && !randomPost? <div className="flex flex-col items-center gap-2">
+        !randomPost? <div className="flex flex-col items-center gap-2">
           <p>Error fetching post</p>
-          <button onClick={() => getPosts()} className="w-[100%] p-2 rounded-md bg-white text-black">Reload</button>
           <button onClick={() => getPosts()} className="w-[100%] p-2 rounded-md bg-white text-black">Reload</button>
         </div>:
         <div className="w-[100%] max-w-[450px] rounded-md flex flex-col items-center justify-center gap-3 p-3 bg-white text-black">
           <div className="w-[100%] flex flex-row items-center justify-start gap-2">
             <p className="text-nowrap">{randomPost?.id + " |"}</p>
-            <p className="text-nowrap">{randomPost?.id + " |"}</p>
             <p className="text-black font-semibold text-xl">{randomPost?.title}</p>
           </div>
           <div className="w-[100%] text-start">
-            <p>{randomPost?.body}</p>
             <p>{randomPost?.body}</p>
           </div>
           <div className="w-[100%] flex flex-row items-center justify-end">
