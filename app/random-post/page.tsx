@@ -12,7 +12,6 @@ export type Post = {
 
 export default function RandomPost() {
   const [posts, setPosts] = useState<Post[] | null>([]);
-  const [error, setError] = useState<string>("")
 
   const [randomPost, setRandomPost] = useState<Post | null>(null);
 
