@@ -10,6 +10,13 @@ export type Post = {
   body: string,
 }
 
+export type Post = {
+  id: number,
+  userId: number,
+  title: string,
+  body: string,
+}
+
 export default function RandomPost() {
   const [posts, setPosts] = useState<Post[] | null>([]);
   const [error, setError] = useState<string>("")
@@ -30,6 +37,11 @@ export default function RandomPost() {
 
   const endpoint = "https://jsonplaceholder.typicode.com/posts";
 
+  const generateRandomNumber = (range: number) => {
+    return Math.floor(Math.random() * (range + 1));
+  }
+
+  const getPosts = async() => {
   const generateRandomNumber = (range: number) => {
     return Math.floor(Math.random() * (range + 1));
   }
@@ -62,6 +74,12 @@ export default function RandomPost() {
       getPosts();
     }
   }, [posts])
+    if(posts) {
+      getRandomPost();
+    } else {
+      getPosts();
+    }
+  }, [posts])
 
   return (
     <div className="w-[100vw] max-w-[100%] h-[100vh] flex flex-col items-center justify-center p-2">
@@ -73,13 +91,16 @@ export default function RandomPost() {
         !isLoading && !randomPost? <div className="flex flex-col items-center gap-2">
           <p>Error fetching post</p>
           <button onClick={() => getPosts()} className="w-[100%] p-2 rounded-md bg-white text-black">Reload</button>
+          <button onClick={() => getPosts()} className="w-[100%] p-2 rounded-md bg-white text-black">Reload</button>
         </div>:
         <div className="w-[100%] max-w-[450px] rounded-md flex flex-col items-center justify-center gap-3 p-3 bg-white text-black">
           <div className="w-[100%] flex flex-row items-center justify-start gap-2">
             <p className="text-nowrap">{randomPost?.id + " |"}</p>
+            <p className="text-nowrap">{randomPost?.id + " |"}</p>
             <p className="text-black font-semibold text-xl">{randomPost?.title}</p>
           </div>
           <div className="w-[100%] text-start">
+            <p>{randomPost?.body}</p>
             <p>{randomPost?.body}</p>
           </div>
           <div className="w-[100%] flex flex-row items-center justify-end">
