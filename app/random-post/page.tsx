@@ -12,6 +12,7 @@ export type Post = {
 
 export default function RandomPost() {
   const [posts, setPosts] = useState<Post[] | null>([]);
+  const [error, setError] = useState<string>("")
 
   const [randomPost, setRandomPost] = useState<Post | null>(null);
 
@@ -39,9 +40,8 @@ export default function RandomPost() {
       const response = await fetch(endpoint)
       const data = await response.json()
       setPosts(data)
-      console.log(data)
     } catch(error) {
-      console.log(error);
+      console.log("Something went wrong!");
     } finally {
       setIsLoading(false);
     }
@@ -51,7 +51,7 @@ export default function RandomPost() {
     if(!posts?.length) {
       return
     }
-    let randomId = generateRandomNumber(posts?.length);
+    const randomId = generateRandomNumber(posts?.length);
     setRandomPost(posts[randomId]);
   }
 
