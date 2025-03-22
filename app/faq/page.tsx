@@ -2,7 +2,6 @@
 import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
 import { BiArrowBack, BiMinusCircle, BiPlusCircle, BiStar } from "react-icons/bi";
-import { BsStar } from "react-icons/bs";
 import { SiTwinkly } from "react-icons/si";
 
 export default function Faq() {
