@@ -66,7 +66,7 @@ export default function RandomPost() {
       {      
         isLoading? <p>Loading...</p>:
         !randomPost? <div className="flex flex-col items-center gap-2">
-          <p>Error fetching post, don't fret!</p>
+          <p>Error fetching post, don not fret!</p>
           <button onClick={() => getPosts()} className="w-[16rem] max-w-[100%] p-2 rounded-md bg-[--foreground] text-[--vibrant]">Reload</button>
         </div>:
         <div className="w-[100%] max-w-[450px] rounded-md flex flex-col items-center justify-center gap-3 p-3 bg-[--dominant] dark:bg-[--vibrant-dark] shadow-md">
