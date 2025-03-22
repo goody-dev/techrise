@@ -3,8 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+
 
   --vibrant: #A820E8;
   --vibrant-dark: #301030;
@@ -13,12 +12,18 @@
   --muted: #807880;
   --muted-dark: #482850;
   --muted-light: #E8E0F0;
+
+  --background: var(--vibrant-light);
+  --foreground: var(--vibrant-dark);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* --background: #0a0a0a;
+    --foreground: #ededed; */
+
+    --background: var(--muted-dark);
+    --foreground: var(--muted-light);
   }
 }
 
