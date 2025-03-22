@@ -1,7 +1,7 @@
 "use client"
 import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
-import { BiArrowBack, BiMinusCircle, BiPlusCircle, BiStar } from "react-icons/bi";
+import { BiArrowBack, BiMinusCircle, BiPlusCircle } from "react-icons/bi";
 import { SiTwinkly } from "react-icons/si";
 
 export default function Faq() {
