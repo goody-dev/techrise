@@ -84,7 +84,7 @@ function BrowserExtensionManager() {
                             <button className='border py-1 px-4 rounded-3xl'>
                               Remove
                             </button>
-                            <button onClick={() => {extension.isActive? deactivateExtension(extension.id): activateExtension(extension.id)}}>
+                            <button onClick={() => extension.isActive? deactivateExtension(extension.id): activateExtension(extension.id)}>
                               {extension.isActive? <BsToggleOn className='text-[32px] text-[--red-500] bg-[--foreground] bg-clip-text' />: <BsToggleOn className='text-[32px] text-[--neutral-600] rotate-180 bg-[--foreground] bg-clip-text' />}
                             </button>
                           </div>
