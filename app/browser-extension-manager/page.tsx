@@ -79,7 +79,7 @@ function BrowserExtensionManager() {
             <div className='w-[100%] flex flex-col justify-center gap-4'>
               <div className='w-[100%] flex flex-col justify-center items-center sm:flex-row sm:justify-between sm:items-between gap-3'>
                 <div>
-                  <p className={`${theme === "dark"? "text-[--dark-foreground]": "text-[--foreground]"} font-[--weight-700] text-[26px]`}>Extensions List</p>
+                  <p className={`${theme === "dark"? "text-[--dark-foreground]": "text-[--foreground]"} font-[--weight-500] text-[26px]`}>Extensions List</p>
                 </div>
                 <div className='flex flex-row items-center justify-center gap-2'>
                   <button onClick={() => setFilterBy("all")} className={`${theme === "dark"? filterBy === "all"? "bg-[--red-500] text-[--neutral-900]": "bg-[--dark-card-bg] text-[--neutral-100]": filterBy === "all"? "bg-[--red-500] text-[--neutral-0]": "bg-[--card-bg] text-[--neutral-900]"} py-[6px] px-4 rounded-3xl shadow-md`}>All</button>
