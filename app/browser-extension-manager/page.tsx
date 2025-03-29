@@ -35,7 +35,7 @@ function BrowserExtensionManager() {
 
   const activateExtension = (id: number) => {
     let extension = extensions.filter(extension => extension.id === id)[0]
-    extension.isActive = true;
+    extension = {...extension, isActive:true};
     console.log(extension)
 
     setExtensions([...extensions.filter(extension => extension.id !== id), extension].sort((a, b) => a.id - b.id))
@@ -43,7 +43,7 @@ function BrowserExtensionManager() {
 
   const deactivateExtension = (id: number) => {
     let extension = extensions.filter(extension => extension.id === id)[0]
-    extension.isActive = false;
+    extension = {...extension, isActive:false};
     console.log(extension)
     setExtensions([...extensions.filter(extension => extension.id !== id), extension].sort((a, b) => a.id - b.id))
   }
