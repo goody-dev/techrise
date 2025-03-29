@@ -8,6 +8,7 @@ import data from './data.json'
 import Image from 'next/image'
 import { BsToggleOn } from 'react-icons/bs'
 
+// type of extension data 
 export type extension = {
     id: number,
     name: string,
@@ -17,21 +18,28 @@ export type extension = {
 }
 
 function BrowserExtensionManager() {
+  // stores available extensions and their state
   const [extensions, setExtensions] = useState<extension[]>(data);
+
+  // hold filter method state
   const [filterBy, setFilterBy] = useState<"all" | "active" | "inactive">("all");
+
+  // hold theme state
   const [theme, setTheme] = useState<"light" | "dark">("dark");
 
   const toggleTheme = () => theme === "dark"? setTheme("light"): setTheme("dark");
 
-
+  // filter extention to get active ones
   const getActiveExtensions = () => {
     return extensions.filter((extension) => extension.isActive === true);
   }
 
+  // filter extention to get inactive ones
   const getInactiveExtensions = () => {
     return extensions.filter((extension) => extension.isActive === false);
   }
 
+  // modify an extension isActive value to true
   const activateExtension = (id: number) => {
     let extension = extensions.filter(extension => extension.id === id)[0]
     extension = {...extension, isActive:true};
@@ -40,6 +48,7 @@ function BrowserExtensionManager() {
     setExtensions([...extensions.filter(extension => extension.id !== id), extension].sort((a, b) => a.id - b.id))
   }
 
+  // modify an extension isActive value to false
   const deactivateExtension = (id: number) => {
     let extension = extensions.filter(extension => extension.id === id)[0]
     extension = {...extension, isActive:false};
@@ -47,8 +56,14 @@ function BrowserExtensionManager() {
     setExtensions([...extensions.filter(extension => extension.id !== id), extension].sort((a, b) => a.id - b.id))
   }
 
-  const activeExtensions = getActiveExtensions();
-  const inactiveExtensions = getInactiveExtensions();
+  // filter extension to exclude extension with given id
+  const removeExtension = (id: number) => {
+    const currentExtensions = extensions.filter(extension => extension.id !== id);
+    setExtensions(currentExtensions.sort((a, b) => a.id - b.id));
+  }
+
+  const activeExtensions = getActiveExtensions(); //store active extenstions
+  const inactiveExtensions = getInactiveExtensions(); //store inactive extensions
 
   return (
       <div className={`w-[100vw] max-w-[100%] h-[100%] min-h-[100vh] flex flex-col items-center gap-4 p-4 py-8 md:p-12 bg-no-repeat ${theme === "dark"? "bg--gradient-to-b from-[#040918] to-[#091540]": "bg-gradient-to-b from-[#EBF2FC] to-[#EEF8F9]"}`}>
@@ -80,7 +95,7 @@ function BrowserExtensionManager() {
                             </div>
                           </div>
                           <div className='w-[100%] flex flex-row items-center justify-between'>
-                            <button className='border py-1 px-4 rounded-3xl'>
+                            <button onClick={() => removeExtension(extension.id)} className='border py-1 px-4 rounded-3xl'>
                               Remove
                             </button>
                             <button onClick={() => extension.isActive? deactivateExtension(extension.id): activateExtension(extension.id)}>
