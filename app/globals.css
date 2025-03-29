@@ -5,30 +5,12 @@
 :root {
 
 
-  --vibrant: #A820E8;
-  --vibrant-dark: #301030;
-  --vibrant-light: #B870D8;
-  --dominant: #E8E0F0;
-  --muted: #807880;
-  --muted-dark: #482850;
-  --muted-light: #E8E0F0;
-
-  --background: var(--vibrant-light);
-  --foreground: var(--vibrant-dark);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    /* --background: #0a0a0a;
-    --foreground: #ededed; */
 
-    --background: var(--muted-dark);
-    --foreground: var(--muted-light);
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
+

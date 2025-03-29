@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "name": "Groid space",
+        "description": "A place for creating extensions",
+        "active": true,
+        "thumbnail": "img/groidspace-thumbnail"
+    },
+    {
+        "id": 2,
+        "name": "Groid space",
+        "description": "A place for creating extensions",
+        "active": true,
+        "thumbnail": "img/groidspace-thumbnail"
+    },
+    {
+        "id": 3,
+        "name": "Groid space",
+        "description": "A place for creating extensions",
+        "active": true,
+        "thumbnail": "img/groidspace-thumbnail"
+    },
+    {
+        "id": 4,
+        "name": "Groid space",
+        "description": "A place for creating extensions",
+        "active": true,
+        "thumbnail": "img/groidspace-thumbnail"
+    }
+]

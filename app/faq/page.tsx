@@ -3,6 +3,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
 import { BiArrowBack, BiMinusCircle, BiPlusCircle } from "react-icons/bi";
 import { SiTwinkly } from "react-icons/si";
+import './page.css'
 
 export default function Faq() {
   const [openedQuestion, setOpenedQuestion] = useState<number | null>(1);
@@ -25,8 +26,8 @@ export default function Faq() {
     },
     {
       id: 2,
-      question: "What is ATC Africa?",
-      answer: "Amazing Tech community Africa"
+      question: "What is Techrise?",
+      answer: "Techrise is a program setup by ATC in collaboration with Enforca to mentor the future engineers of africa"
     },
     {
       id: 3,
@@ -52,8 +53,8 @@ export default function Faq() {
         </div>
         <ul className="w-[100%] flex flex-col items-center justify-center gap-2">
           {faqs.map((faq) => 
-            <li key={faq.id} className="w-[100%] flex flex-col p-1">
-              <div className="w-[100%] flex flex-row items-start justify-between gap-1">
+            <li key={faq.id} className="w-[100%] flex flex-col p-1 gap-1">
+              <div className="w-[100%] flex flex-row items-start justify-between gap-3">
                 <p className="text-[--muted-dark] dark:text-[--vibrant-light] font-semibold">{faq.question}</p>
                 <span onClick={() => handleExpand(faq.id)} className={`cursor-pointer ${openedQuestion === faq.id? "text-[--vibrant-dark] dark:text-[--vibrant-dark]": "text-[--vibrant] dark:text-[--vibrant]"} font-semibold text-center`}>{openedQuestion === faq.id? <BiMinusCircle />: <BiPlusCircle />}</span>
               </div>
