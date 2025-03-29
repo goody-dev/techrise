@@ -21,9 +21,8 @@ function BrowserExtensionManager() {
   const [filterBy, setFilterBy] = useState<"all" | "active" | "inactive">("all");
   const [theme, setTheme] = useState<"light" | "dark">("dark");
 
-  const toggleTheme = () => {
-    theme === "dark"? setTheme("light"): setTheme("dark");
-  }
+  const toggleTheme = () => theme === "dark"? setTheme("light"): setTheme("dark");
+
 
   const getActiveExtensions = () => {
     return extensions.filter((extension) => extension.isActive === true);
