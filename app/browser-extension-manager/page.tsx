@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from 'react'
-import Logo from './assets/images/logo.svg'
+import Logo from './assets/images/logo.png'
 import IconSun from './assets/images/icon-sun.svg'
 import IconMoon from './assets/images/icon-moon.svg'
 import data from './data.json'
@@ -68,7 +68,10 @@ function BrowserExtensionManager() {
   return (
       <div className={`w-[100vw] max-w-[100%] h-[100%] min-h-[100vh] flex flex-col items-center gap-4 p-4 py-8 md:p-12 bg-no-repeat ${theme === "dark"? "bg--gradient-to-b from-[#040918] to-[#091540]": "bg-gradient-to-b from-[#EBF2FC] to-[#EEF8F9]"}`}>
             <div className={`${theme === "dark"? "bg-[--dark-card-bg]": "bg-[--card-bg]"} w-[100%] flex flex-row items-center p-2 justify-between rounded-lg shadow-md`}>
-              <Image src={Logo} alt="logo" className={`${theme === "dark"? "text-[--dark-foreground]": "text-[--foreground]"}`}></Image>
+              <div className='flex flex-row items-center gap-2'>
+                <Image height={32} width={32} src={Logo} alt="logo" ></Image>
+                <p className={`${theme === "dark"? "text-[--dark-foreground]": "text-[--foreground]"} font-semibold`}>Extension</p>
+              </div>
               <button onClick={()=> toggleTheme()} className={`h-[100%] ${theme === "dark"? "bg-[--neutral-600]": "bg-neutral-200"}  p-2 rounded-lg`}>
                 {theme === "dark"? <Image src={IconSun} alt="light"></Image>: <Image src={IconMoon} alt="dark mode"></Image>}
               </button>
@@ -76,7 +79,7 @@ function BrowserExtensionManager() {
             <div className='w-[100%] flex flex-col justify-center gap-4'>
               <div className='w-[100%] flex flex-col justify-center items-center sm:flex-row sm:justify-between sm:items-between gap-3'>
                 <div>
-                  <p className={`${theme === "dark"? "text-[--dark-foreground]": "text-[--foreground]"} font-[--weight-700] text-[32px]`}>Extensions List</p>
+                  <p className={`${theme === "dark"? "text-[--dark-foreground]": "text-[--foreground]"} font-[--weight-700] text-[26px]`}>Extensions List</p>
                 </div>
                 <div className='flex flex-row items-center justify-center gap-2'>
                   <button onClick={() => setFilterBy("all")} className={`${theme === "dark"? filterBy === "all"? "bg-[--red-500] text-[--neutral-900]": "bg-[--dark-card-bg] text-[--neutral-100]": filterBy === "all"? "bg-[--red-500] text-[--neutral-0]": "bg-[--card-bg] text-[--neutral-900]"} py-[6px] px-4 rounded-3xl shadow-md`}>All</button>
