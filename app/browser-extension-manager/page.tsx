@@ -110,7 +110,6 @@ function BrowserExtensionManager() {
               </div>
             </div>
           </div>
-
   )
 }
 
