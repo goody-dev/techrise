@@ -4,6 +4,8 @@ import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { BiArrowBack } from "react-icons/bi";
 
+import './page.css'
+
 export type Post = {
   id: number,
   userId: number,
@@ -59,7 +61,7 @@ export default function RandomPost() {
 
 
   return (
-    <div className="w-[100vw] max-w-[100%] h-[100vh] flex flex-col items-center justify-center p-2 bg-[--background]">
+    <div id="random-post" className="w-[100vw] max-w-[100%] h-[100vh] flex flex-col items-center justify-center p-2 bg-background text-foreground">
       <header className="fixed w-[100vw] max-w-[100%] p-1 sm:p-2 md:p-3 top-0 left-0 flex flex-row items-center justify-start">
         {url.endsWith("faq") || url.endsWith("random-post")? <button onClick={() => router.back()} className="text-white text-2xl"><BiArrowBack /></button>: null}
       </header>

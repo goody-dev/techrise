@@ -42,7 +42,7 @@ export default function Faq() {
   ]
 
   return (
-    <div className="w-100vw max-w-[100%] h-[100vh] flex flex-row items-center justify-center p-2 bg-gradient-to-b from-[--vibrant-dark] from-[1%] to-[--vibrant-light] to-[99%]">
+    <div id="faq" className="w-100vw max-w-[100%] h-[100vh] flex flex-row items-center justify-center p-2 bg-gradient-to-b from-[--vibrant-dark] from-[1%] to-[--vibrant-light] to-[99%]">
       <header className="fixed w-[100vw] max-w-[100%] p-1 sm:p-2 md:p-3 top-0 left-0 flex flex-row items-center justify-start">
           {url.endsWith("faq") || url.endsWith("random-post")? <button onClick={() => router.back()} className="text-white text-2xl"><BiArrowBack /></button>: null}
       </header>

@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+#browser-extension-manager {
   --neutral-900: hsl(227, 75%, 14%);
   --neutral-800: hsl(226, 25%, 17%);
   --neutral-700: hsl(225, 23%, 24%);
@@ -39,8 +39,8 @@
   --dark-card-bg: var(--neutral-700);
 }
 
-body {
+#browser-extension-manager {
   color: var(--foreground);
   background: var(--dark-background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-noto-sans);
 }

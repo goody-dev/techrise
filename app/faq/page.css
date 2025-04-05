@@ -2,8 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-
+#faq {
 
   --vibrant: #A820E8;
   --vibrant-dark: #301030;
@@ -18,17 +17,13 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    /* --background: #0a0a0a;
-    --foreground: #ededed; */
-
+  #faq {
     --background: var(--muted-dark);
     --foreground: var(--muted-light);
   }
 }
 
-body {
+#faq {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
 }
